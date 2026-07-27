@@ -1,24 +1,38 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/landing/nav";
+import { Hero } from "@/components/landing/hero";
+import {
+  Stats, Features, CourtroomDemo, Academy, Gamification,
+  Testimonials, Pricing, FAQ, CTA, Footer,
+} from "@/components/landing/sections";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "LawQuest — Learn Law. Play Smart. Know Your Rights." },
+      { name: "description", content: "LawQuest is an AI-powered legal literacy platform with courtroom simulations, adaptive quizzes and a legal assistant that explains your rights in plain language." },
+      { property: "og:title", content: "LawQuest — AI-powered legal literacy" },
+      { property: "og:description", content: "Cinematic courtroom simulations, adaptive quizzes and an AI assistant that turns dense law into durable knowledge." },
+    ],
+  }),
+  component: Landing,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function Landing() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="min-h-screen bg-background text-foreground selection:bg-accent/30 selection:text-foreground">
+      <Nav />
+      <Hero />
+      <Stats />
+      <Features />
+      <CourtroomDemo />
+      <Academy />
+      <Gamification />
+      <Testimonials />
+      <Pricing />
+      <FAQ />
+      <CTA />
+      <Footer />
+    </main>
   );
 }
