@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play, Sparkles, Shield, Gavel } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-workspace.jpg";
 
 export function Hero() {
@@ -53,21 +54,22 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 0.25 }}
               className="mt-9 flex flex-wrap items-center gap-3"
             >
-              <a
-                href="#get-started"
+              <Link
+                to="/auth"
+                search={{ mode: "signup" }}
                 className="group inline-flex items-center gap-2 h-12 px-5 rounded-xl text-sm font-semibold text-accent-foreground shadow-[var(--shadow-glow)]"
                 style={{ background: "var(--gradient-accent)" }}
               >
                 Start learning free
                 <ArrowRight className="size-4 group-hover:translate-x-0.5 transition-transform" />
-              </a>
-              <a
-                href="#courtroom"
+              </Link>
+              <Link
+                to="/courtroom"
                 className="inline-flex items-center gap-2 h-12 px-5 rounded-xl glass text-sm font-medium hover:bg-card/70 transition-colors"
               >
                 <Play className="size-4 text-accent" />
-                Watch the courtroom demo
-              </a>
+                Enter the courtroom
+              </Link>
             </motion.div>
 
             <div className="mt-10 flex items-center gap-6 text-xs text-muted-foreground">

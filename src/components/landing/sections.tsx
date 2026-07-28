@@ -3,6 +3,7 @@ import {
   Bot, Gavel, Brain, Trophy, GraduationCap, ShieldCheck,
   Sparkles, Users, BookOpen, Zap, Check, Star, ArrowRight, Scale,
 } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 const fade = {
   initial: { opacity: 0, y: 20 },
@@ -104,6 +105,13 @@ export function CourtroomDemo() {
               </li>
             ))}
           </ul>
+          <Link
+            to="/courtroom"
+            className="mt-8 inline-flex items-center gap-2 h-11 px-5 rounded-xl text-sm font-semibold text-accent-foreground shadow-[var(--shadow-glow)]"
+            style={{ background: "var(--gradient-accent)" }}
+          >
+            Enter the courtroom <ArrowRight className="size-4" />
+          </Link>
         </motion.div>
 
         <motion.div {...fade} className="relative">
@@ -352,9 +360,9 @@ export function CTA() {
           <p className="mt-4 text-muted-foreground text-lg max-w-xl mx-auto">
             Join 120,000+ learners mastering their rights through play.
           </p>
-          <a href="#" className="mt-8 inline-flex items-center gap-2 h-12 px-6 rounded-xl text-sm font-semibold text-accent-foreground shadow-[var(--shadow-glow)]" style={{ background: "var(--gradient-accent)" }}>
+          <Link to="/auth" search={{ mode: "signup" }} className="mt-8 inline-flex items-center gap-2 h-12 px-6 rounded-xl text-sm font-semibold text-accent-foreground shadow-[var(--shadow-glow)]" style={{ background: "var(--gradient-accent)" }}>
             Begin your quest <ArrowRight className="size-4" />
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>
