@@ -105,6 +105,13 @@ export function CourtroomDemo() {
               </li>
             ))}
           </ul>
+          <Link
+            to="/courtroom"
+            className="mt-8 inline-flex items-center gap-2 h-11 px-5 rounded-xl text-sm font-semibold text-accent-foreground shadow-[var(--shadow-glow)]"
+            style={{ background: "var(--gradient-accent)" }}
+          >
+            Enter the courtroom <ArrowRight className="size-4" />
+          </Link>
         </motion.div>
 
         <motion.div {...fade} className="relative">
