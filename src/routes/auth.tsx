@@ -31,9 +31,9 @@ function AuthPage() {
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Demo-only: simulate auth then route to courtroom (or redirect target)
+    // Demo-only: simulate auth then route into the app dashboard
     await new Promise((r) => setTimeout(r, 700));
-    navigate({ to: redirect || "/courtroom" });
+    navigate({ to: redirect || "/app" });
   };
 
   return (
